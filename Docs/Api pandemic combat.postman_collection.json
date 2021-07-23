@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "0ef39bde-122b-4f8f-a8be-fc845287dc77",
+		"name": "Api pandemic combat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar hospitais",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/hospitais",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"hospitais"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Recursos por hospital",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/recursos/hospital/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"recursos",
+						"hospital",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar Hospital com seus recursos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"hospital CG\",\r\n    \"estado\": \"Paraíba\",\r\n    \"cidade\": \"Campina Grande\",\r\n    \"bairro\": \"Novo Horizonte\",\r\n    \"rua\": \"Rosa Farias Dantas\",\r\n    \"numero\": \"776\",\r\n    \"cnpj\": \"123456\",\r\n    \"recurso\": [\r\n      {\r\n          \"item\": \"Respirador\",\r\n          \"pontos\": 10\r\n      },\r\n      {\r\n          \"item\": \"Enfermeiro\",\r\n          \"pontos\": 3\r\n      }\r\n      ],\r\n    \"ocupacao\": {\r\n        \"percentual\": 50\r\n\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/hospitais",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"hospitais"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ocupação por hospital",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/ocupacao/hospital/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ocupacao",
+						"hospital",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualizar ocupação",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"percentual\": 91\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/ocupacao/hospital/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ocupacao",
+						"hospital",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar hospital por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/hospitais/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"hospitais",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Intercambio",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n   \"recursosSolicitante\": [\r\n       {\r\n          \"id\": 1\r\n       },\r\n       {\r\n           \"id\": 2\r\n       },\r\n       {\r\n           \"id\": 3\r\n       }\r\n   ],\r\n   \"hospitalSolicitadoId\": 2,\r\n   \"recursosSolicitado\": [\r\n       {\r\n           \"id\": 6\r\n       }\r\n   ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/intercambio/hospital/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"intercambio",
+						"hospital",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gerar relatório baixa lotação ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/estatisticas/ocupacao/baixalotacao",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"estatisticas",
+						"ocupacao",
+						"baixalotacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gerar relatório super lotação",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/estatisticas/ocupacao/superlotacao",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"estatisticas",
+						"ocupacao",
+						"superlotacao"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
