@@ -1,4 +1,4 @@
-# API para ajudar no combate a pandemia
+# API para ajudar no combate à pandemia
 
 API Rest desenvolvida para ajudar no combate a pandemia, armazenando informações sobre os hospitais e 
 seus recursos (pessoas e materiais), possibilitando o intercâmbio entre eles.
@@ -34,10 +34,10 @@ $ cd target
 $ java -jar pandemic_combat_api.jar
 ```
 
-### Sprint Boot Version
+### Spring Boot Version
 
 ```
-Pode importar como projeto mavem existente no Spring Tool Suite 4 que foi a versão usada para desenvolver
+Pode importar como projeto maven existente no Spring Tool Suite 4 que foi a versão usada para desenvolver
 ```
 
 #### Swagger
@@ -48,7 +48,7 @@ http://localhost:8080/swagger-ui.html
 ### Arquivo de Collection Json - Usar no Postman
 
 ```
-  - O arquivo de Collection Json esta na pasta Docs. Pode copiar ele e importar no postman para testar os payloads da api
+  - O arquivo de Collection Json está na pasta Docs. Pode copiar e importar no postman para testar os payloads da api
 ```
 
 
