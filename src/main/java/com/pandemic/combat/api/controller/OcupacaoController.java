@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pandemic.combat.api.model.dto.OcupacaoDTO;
-import com.pandemic.combat.domain.exception.ArgumentoInvalidoException;
+import com.pandemic.combat.domain.exception.ErroInternoException;
 import com.pandemic.combat.domain.model.Ocupacao;
 import com.pandemic.combat.domain.repository.OcupacaoRepository;
 import com.pandemic.combat.domain.service.OcupacaoService;
@@ -54,9 +54,10 @@ public class OcupacaoController {
 			
 			return ocupacaoService.salvar(ocupacaoAtual);
 
-		} catch (IllegalArgumentException e) {
+		} catch ( IllegalArgumentException e ) {
+		//} catch ( OcupacaoNaoEncontradaException e ) {
 			
-			throw new ArgumentoInvalidoException( String.format( "Não existe um status para ser atualizado" ));
+			throw new ErroInternoException( e.getMessage(), e );
 			
 		}
 		

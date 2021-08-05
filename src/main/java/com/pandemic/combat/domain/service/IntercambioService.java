@@ -106,7 +106,7 @@ public class IntercambioService {
 	private Long pontuacao( List<RecursoDTO> recursosDTO ) {
 		Long pontuacao = 0L;
 		
-		try {
+		//try {
 			
 			for( RecursoDTO recursoDTO : recursosDTO ) {
 				
@@ -116,9 +116,10 @@ public class IntercambioService {
 			
 			return pontuacao;
 			
-		} catch (NoSuchElementException e) {
-			throw new EntidadeNaoEncontradaException( String.format( "O recurso não existe na base de dados" ) );
-		}
+		//} catch (NoSuchElementException e) {
+			//throw new EntidadeNaoEncontradaException( String.format( "O recurso não existe na base de dados" ) );
+			
+		//}
 		
 		
 	}
